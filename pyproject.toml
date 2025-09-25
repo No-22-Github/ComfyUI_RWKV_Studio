@@ -1,0 +1,25 @@
+[project]
+name = "rwkv_studio"
+description = "ComfyUI nodes for RWKV"
+version = "1.0.0"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+
+dependencies = [
+  "rwkv",
+]
+
+[project.urls]
+Repository = "https://github.com/No-22-Github/ComfyUI_RWKV_Studio"
+Documentation = "https://github.com/No-22-Github/ComfyUI_RWKV_Studio/wiki"
+"Bug Tracker" = "https://github.com/No-22-Github/ComfyUI_RWKV_Studio/issues"
+
+[tool.comfy]
+PublisherId = "hellono22"  # ← 发布前替换为你在 Registry 创建的 Publisher
+DisplayName = "ComfyUI RWKV Studio"             # 展示名（可读、可重命名）
+
+includes = [
+  "requirements.txt",
+  "README.md",
+]
+
