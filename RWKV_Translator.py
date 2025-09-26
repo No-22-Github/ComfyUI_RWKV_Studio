@@ -21,8 +21,8 @@ VOCAB_PATH = "rwkv_vocab_v20230424"
 # --- 核心生成函数 ---
 def _rwkv_evaluate(model, pipeline, ctx):
     args = PIPELINE_ARGS(
-        temperature=1.0, top_p=0.7,
-        alpha_frequency=0.1, alpha_presence=0.1,
+        temperature=1.0, top_p=0,
+        alpha_frequency=0, alpha_presence=0,
         token_ban=[], token_stop=[0]
     )
     ctx, all_tokens, out_last, out_str, occurrence, state = ctx.strip(), [], 0, '', {}, None
@@ -87,7 +87,7 @@ class RWKVTranslator:
         return { "required": {
                 "model_path": ("STRING", {"forceInput": True}),
                 "direction": (["en2zh", "zh2en"],),
-                "text_to_translate": ("STRING", {"multiline": True, "default": "Welcome to the RWKV series models, embrace the RNN architecture."}),
+                "text_to_translate": ("STRING", {"multiline": True, "default": "Welcome use RWKV series models. Beyond Transformer!"}),
             }}
             
     RETURN_TYPES = ("STRING",)
